@@ -9,7 +9,7 @@
     <meta name="keyword" content="Creative, Dashboard, Admin, Template, Theme, Bootstrap, Responsive, Retina, Minimal">
     <link rel="shortcut icon" href="img/favicon.png">
 
-    <title>Insert</title>
+    <title>Dashboard</title>
 
     <!-- Bootstrap CSS -->
     <link href="<?= base_url('assets/dashboard/') ?>css/bootstrap.min.css" rel="stylesheet">
@@ -151,55 +151,50 @@
                 </div>
                 <div class="row">
                     <div class="col-lg-12">
-                        <form action="<?= base_url('buku/insert') ?>" method="post">
-                            <table>
-                                <tr>
-                                    <td>Judul Buku</td>
-                                    <td>:</td>
-                                    <td><input type="text" name="judul" ></td>
-                                </tr>
-                                <tr>
-                                    <td>Pengarang</td>
-                                    <td>:</td>
-                                    <td><input type="text" name="pengarang"></td>
-                                </tr>
-                                <tr>
-                                    <td>Penerbit</td>
-                                    <td>:</td>
-                                    <td><input type="text" name="penerbit" ></td>
-                                </tr>
-                                <tr>
-                                    <td>Tahun Terbit</td>
-                                    <td>:</td>
-                                    <td><input type="date" name="thn_terbit" ></td>
-                                </tr>
-                                <tr>
-                                    <td>ISBN</td>
-                                    <td>:</td>
-                                    <td><input type="text" name="isbn" ></td>
-                                </tr>
-                                <tr>
-                                    <td>Jumlah Buku</td>
-                                    <td>:</td>
-                                    <td><input type="number" name="jumlah_buku" ></td>
-                                </tr>
-                                <tr>
-                                    <td>Lokasi</td>
-                                    <td>:</td>
-                                    <td><input type="text" name="lokasi" ></td>
-                                </tr>
-                                <tr>
-                                    <td>Tanggal Input</td>
-                                    <td>:</td>
-                                    <td><input type="date" name="tgl_input"></td>
-                                </tr>
-                                <tr>
-                                    <td colspan="2">
-                                        <input type="submit" class="btn btn-success" name="submit">
-                                    </td>
-                                </tr>
+                        <a href="<?= base_url('buku/insert?page_insert=yes') ?>">
+                        <button class="btn btn-primary" style="margin-bottom:10px;">Tambah Buku</button></a>
+                        <section class="panel">
+                            <table class="table table-striped">
+                                <thead>
+                                    <tr>
+                                        <th>id</th>
+                                        <th>Judul Buku</th>
+                                        <th>Pengarang</th>
+                                        <th>Penerbit</th>
+                                        <th>Tahun Penerbit</th>
+                                        <th>ISBN</th>
+                                        <th>Jumlah Buku</th>
+                                        <th>Lokasi</th>
+                                        <th>Tanggal Input</th>
+                                        <th>Tindakan</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <?php foreach ($buku as $row) {
+                                        ?>
+                                        <tr>
+                                            <td><?= $row->id ?></td>
+                                            <td><?= $row->judul ?> </td>
+                                            <td><?= $row->pengarang ?></td>
+                                            <td><?= $row->penerbit ?></td>
+                                            <td><?= $row->thn_terbit ?></td>
+                                            <td><?= $row->isbn ?></td>
+                                            <td><?= $row->jumlah_buku ?></td>
+                                            <td><?= $row->lokasi ?></td>
+                                            <td><?= $row->tgl_input ?></td>
+                                            <td>
+                                                <a href="<?= base_url('buku/delete?id=' . $row->id) ?>">
+                                                    <button class="btn btn-danger">Delete</button>
+                                                </a>
+                                                <a href="<?= base_url('buku/editPage?id=' . $row->id) ?>">
+                                                    <button class="btn btn-info">Edit</button>
+                                                </a>
+                                            </td>
+                                        </tr>
+                                    <?php } ?>
+                                </tbody>
                             </table>
-                        </form>
+                        </section>
                     </div>
                 </div>
                 <!-- project team & activity end -->
