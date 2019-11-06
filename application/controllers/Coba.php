@@ -4,11 +4,11 @@ class Coba extends CI_Controller
     public function __construct()
     {
         parent::__construct();
-        $this->load->model('buku_model','model');
+        $this->load->model('anggota_model','model');
     }
     public function index()
     {
-        $data['buku'] = $this->model->getAll();
-        $this->load->view('dashboard/v_buku',$data);
+        $data['anggota'] = $this->model->getAll();
+        $this->load->view('dashboard/v_anggota',$data);
     }
 }

@@ -110,7 +110,7 @@
                         </a>
                     </li>
                     <li class="sub-menu">
-                        <a href="javascript:;" class="">
+                        <a href="<?= base_url('anggota') ?>" class="">
                             <i class="icon_group"></i>
                             <span>Anggota</span>
                             <span class="arrow arrow-right"></span>
