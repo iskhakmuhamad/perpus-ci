@@ -142,10 +142,10 @@
                 <!--overview start-->
                 <div class="row">
                     <div class="col-lg-12">
-                        <h3 class="page-header"><i class="fa fa-book"></i>BUKU</h3>
+                        <h3 class="page-header"><i class="fa fa-group"></i>Anggota</h3>
                         <ol class="breadcrumb">
                             <li><i class="fa fa-home"></i><a href="<?= base_url('coba') ?>">Home</a></li>
-                            <li><i class="fa fa-book"></i>Buku</li>
+                            <li><i class="fa fa-group"></i>Anggota</li>
                         </ol>
                     </div>
                 </div>
@@ -153,51 +153,64 @@
                     <div class="col-lg-12">
                         <section class="panel">
                             <header class="panel-heading">
-                                Tambah Buku
+                                Tambah Anggota
                             </header>
                             <div class="panel-body">
                                 <div class="form">
-                                    <form class="form-validate form-horizontal " id="register_form" method="post" action="<?= base_url('buku/insert') ?>">
+                                    <form class="form-validate form-horizontal " id="register_form" method="post" action="<?= base_url('anggota/insert') ?>">
                                         <div class="form-group ">
-                                            <label for="judul" class="control-label col-lg-2">Judul Buku<span class="required">*</span></label>
+                                            <label for="nim" class="control-label col-lg-2">NIM<span class="required">*</span></label>
                                             <div class="col-lg-10">
-                                                <input class=" form-control" name="judul" type="text" required />
+                                                <input class=" form-control" name="nim" type="text" required />
                                             </div>
                                         </div>
                                         <div class="form-group ">
-                                            <label for="pengarang" class="control-label col-lg-2">Pengarang<span class="required">*</span></label>
+                                            <label for="nama" class="control-label col-lg-2">Nama Lengkap<span class="required">*</span></label>
                                             <div class="col-lg-10">
-                                                <input class=" form-control" name="pengarang" type="text" required />
+                                                <input class=" form-control" id="fullname" name="nama" type="text" />
                                             </div>
                                         </div>
                                         <div class="form-group ">
-                                            <label for="penerbit" class="control-label col-lg-2">Penerbit<span class="required">*</span></label>
+                                            <label for="tempat_lahir" class="control-label col-lg-2">Tempat Lahir<span class="required">*</span></label>
                                             <div class="col-lg-10">
-                                                <input class=" form-control" name="penerbit" type="text" required />
+                                                <input class=" form-control" name="tempat_lahir" type="text" required />
                                             </div>
                                         </div>
                                         <div class="form-group ">
-                                            <label for="thn_terbit" class="control-label col-lg-2">Tahun Terbit<span class="required">*</span></label>
+                                            <label for="tgl_lahir" class="control-label col-lg-2">Tanggal Lahir<span class="required">*</span></label>
                                             <div class="col-lg-10">
-                                                <input class=" form-control" name="thn_terbit" type="number" required />
+                                                <input class=" form-control" name="tgl_lahir" type="date" required />
                                             </div>
                                         </div>
                                         <div class="form-group ">
-                                            <label for="isbn" class="control-label col-lg-2">ISBN<span class="required">*</span></label>
+                                            <label for="jk" class="control-label col-lg-2">Jenis Kelamin<span class="required">*</span></label>
                                             <div class="col-lg-10">
-                                                <input class=" form-control" name="isbn" type="text" required />
+                                                <div class="checkbox">
+                                                    <div class="radio">
+                                                        <label>
+                                                            <input type="radio" name="jk" id="optionsRadios1" value="L" checked>
+                                                            Laki - Laki
+                                                        </label>
+                                                    </div>
+                                                    <div class="radio">
+                                                        <label>
+                                                            <input type="radio" name="jk" id="optionsRadios2" value="P">
+                                                            Perempuan
+                                                        </label>
+                                                    </div>
+                                                </div>
                                             </div>
                                         </div>
                                         <div class="form-group ">
-                                            <label for="jumlah_buku" class="control-label col-lg-2">Jumlah Buku<span class="required">*</span></label>
+                                            <label for="thn_masuk" class="control-label col-lg-2">Tahun Masuk<span class="required">*</span></label>
                                             <div class="col-lg-10">
-                                                <input class=" form-control" name="jumlah_buku" type="number" required />
+                                                <input class="form-control" name="thn_masuk" type="text" required />
                                             </div>
                                         </div>
                                         <div class="form-group ">
-                                            <label for="lokasi" class="control-label col-lg-2">Lokasi<span class="required">*</span></label>
+                                            <label for="prodi" class="control-label col-lg-2">Prodi<span class="required">*</span></label>
                                             <div class="col-lg-10">
-                                                <input class="form-control" name="lokasi" type="text" required />
+                                                <input class=" form-control" name="prodi" type="text" required />
                                             </div>
                                         </div>
                                         <div class="form-group">

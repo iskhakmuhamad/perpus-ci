@@ -97,7 +97,7 @@
                 <!-- sidebar menu start-->
                 <ul class="sidebar-menu">
                     <li class="sub-menu">
-                        <a class="" href="<?= base_url('home') ?>">
+                        <a class="" href="index.html">
                             <i class="icon_house_alt"></i>
                             <span>Dashboard</span>
                         </a>
@@ -110,7 +110,7 @@
                         </a>
                     </li>
                     <li class="active">
-                        <a href="" class="">
+                        <a href="<?= base_url('anggota') ?>" class="">
                             <i class="icon_group"></i>
                             <span>Anggota</span>
                             <span class="arrow arrow-right"></span>
@@ -151,50 +151,78 @@
                 </div>
                 <div class="row">
                     <div class="col-lg-12">
-                        <a href="<?= base_url('anggota/insert?page_insert=yes') ?>">
-                            <button class="btn btn-primary" style="margin-bottom:10px;">Tambah Anggota</button></a>
                         <section class="panel">
-                            <table class="table table-striped">
-                                <thead>
-                                    <tr>
-                                        <th>Nim</th>
-                                        <th>Nama</th>
-                                        <th>Tenpat Lahir</th>
-                                        <th>Tanggal Lahir</th>
-                                        <th>Jenis Kelamin</th>
-                                        <th>Prodi</th>
-                                        <th>Tahun Masuk</th>
-                                        <th>Tindakan</th>
-                                    </tr>
-                                </thead>
-                                <tbody>
-                                    <?php foreach ($anggota as $row) {
-                                        ?>
-                                        <tr>
-                                            <td><?= $row->nim ?></td>
-                                            <td><?= $row->nama ?> </td>
-                                            <td><?= $row->tempat_lahir ?></td>
-                                            <td><?= $row->tgl_lahir ?></td>
-                                            <td>
-                                            <?php if($row->jk == 'P')
-                                            echo "Perempuan";
-                                            else {
-                                                echo "Laki - Laki ";
-                                            } ?></td>
-                                            <td><?= $row->prodi ?></td>
-                                            <td><?= $row->thn_masuk ?></td>
-                                            <td>
-                                                <a href="<?= base_url('anggota/delete?nim=' . $row->nim) ?>">
-                                                    <button class="btn btn-danger">Delete</button>
-                                                </a>
-                                                <a href="<?= base_url('anggota/editPage?nim=' . $row->nim) ?>">
-                                                    <button class="btn btn-info">Edit</button>
-                                                </a>
-                                            </td>
-                                        </tr>
-                                    <?php } ?>
-                                </tbody>
-                            </table>
+                            <header class="panel-heading">
+                                Tambah Anggota
+                            </header>
+                            <div class="panel-body">
+                                <div class="form">
+                                    <form class="form-validate form-horizontal " id="register_form" method="post" action="<?= base_url('anggota/editAnggota') ?>">
+                                        <div class="form-group ">
+                                            <input type="hidden" name="id" value="<?= $anggota->nim ?>">
+                                            <label for="nim" class="control-label col-lg-2">NIM<span class="required">*</span></label>
+                                            <div class="col-lg-10">
+                                                <input class=" form-control" name="nim" type="text" value="<?= $anggota->nim ?>" required />
+                                            </div>
+                                        </div>
+                                        <div class="form-group ">
+                                            <label for="nama" class="control-label col-lg-2">Nama Lengkap<span class="required">*</span></label>
+                                            <div class="col-lg-10">
+                                                <input class=" form-control" id="fullname" name="nama" type="text" value="<?= $anggota->nama ?>" />
+                                            </div>
+                                        </div>
+                                        <div class="form-group ">
+                                            <label for="tempat_lahir" class="control-label col-lg-2">Tempat Lahir<span class="required">*</span></label>
+                                            <div class="col-lg-10">
+                                                <input class=" form-control" name="tempat_lahir" type="text" value="<?= $anggota->tempat_lahir ?>" required />
+                                            </div>
+                                        </div>
+                                        <div class="form-group ">
+                                            <label for="tgl_lahir" class="control-label col-lg-2">Tanggal Lahir<span class="required">*</span></label>
+                                            <div class="col-lg-10">
+                                                <input class=" form-control" name="tgl_lahir" type="date" value="<?= $anggota->tgl_lahir ?>" required />
+                                            </div>
+                                        </div>
+                                        <div class="form-group ">
+                                            <label for="jk" class="control-label col-lg-2">Jenis Kelamin<span class="required">*</span></label>
+                                            <div class="col-lg-10">
+                                                <div class="checkbox">
+                                                    <div class="radio">
+                                                        <label>
+                                                            <input type="radio" name="jk" id="optionsRadios1" value="L">
+                                                            Laki - Laki
+                                                        </label>
+                                                    </div>
+                                                    <div class="radio">
+                                                        <label>
+                                                            <input type="radio" name="jk" id="optionsRadios2" value="P">
+                                                            Perempuan
+                                                        </label>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="form-group ">
+                                            <label for="thn_masuk" class="control-label col-lg-2">Tahun Masuk<span class="required">*</span></label>
+                                            <div class="col-lg-10">
+                                                <input class="form-control" name="thn_masuk" type="text" value="<?= $anggota->thn_masuk ?>" required />
+                                            </div>
+                                        </div>
+                                        <div class="form-group ">
+                                            <label for="prodi" class="control-label col-lg-2">Prodi<span class="required">*</span></label>
+                                            <div class="col-lg-10">
+                                                <input class=" form-control" name="prodi" type="text" value="<?= $anggota->prodi ?>" required />
+                                            </div>
+                                        </div>
+                                        <div class="form-group">
+                                            <div class="col-lg-offset-2 col-lg-10">
+                                                <button class="btn btn-primary" type="submit" name="submit">Save</button>
+                                                <button class="btn btn-default" type="button">Cancel</button>
+                                            </div>
+                                        </div>
+                                    </form>
+                                </div>
+                            </div>
                         </section>
                     </div>
                 </div>

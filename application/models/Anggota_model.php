@@ -6,7 +6,7 @@ class Anggota_model extends CI_Model
     {
         return $this->db->get($this->table)->result();
     }
-    public function insertBuku($value)
+    public function insertAnggota($value)
     {
         return $this->db->insert($this->table,$value);
     }

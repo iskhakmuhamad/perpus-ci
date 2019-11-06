@@ -8,7 +8,8 @@ class Coba extends CI_Controller
     }
     public function index()
     {
-        $data['anggota'] = $this->model->getAll();
-        $this->load->view('dashboard/v_anggota',$data);
+        // $data['anggota'] = $this->model->getAll();
+        // $this->load->view('dashboard/v_anggota',$data);
+        $this->load->view('dashboard/v_insertAnggota');
     }
 }
