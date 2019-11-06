@@ -9,6 +9,6 @@ class Coba extends CI_Controller
     public function index()
     {
         $data['buku'] = $this->model->getAll();
-        $this->load->view('dashboard/v_buku.php',$data);
+        $this->load->view('dashboard/v_buku',$data);
     }
 }

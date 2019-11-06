@@ -11,14 +11,14 @@
         public function index()
         {
             $data['buku'] = $this->model->getAll();
-            $this ->load->view('buku/v_buku', $data);
+            $this ->load->view('dashboard/v_buku', $data);
         }
 
         public function insert()
         {
             if (isset($_GET['page_insert'])) 
             { 
-                $this->load->view('buku/v_insertBuku');
+                $this->load->view('dashboard/v_insertBuku');
             }  
             if (isset($_POST['submit'])) {
                 $judul = $this->input->post('judul');
@@ -28,7 +28,6 @@
                 $isbn = $this->input->post('isbn');
                 $jumlah_buku = $this->input->post('jumlah_buku');
                 $lokasi = $this->input->post('lokasi');
-                $tgl_input = $this->input->post('tgl_input');
 
                 $value = array
                 (
@@ -38,8 +37,7 @@
                     'thn_terbit' => $thn_terbit,
                     'isbn' => $isbn,
                     'jumlah_buku' => $jumlah_buku,
-                    'lokasi' => $lokasi,
-                    'tgl_input' => $tgl_input
+                    'lokasi' => $lokasi
                 );
 
                 $insert = $this->model->insertBuku($value);
@@ -75,7 +73,7 @@
             );
 
             $getBuku['buku'] = $this->model->getById($getId);
-            $this->load->view('buku/v_editBuku',$getBuku);
+            $this->load->view('dashboard/v_editBuku',$getBuku);
         }
 
         public function editBuku()
@@ -90,7 +88,6 @@
                 $isbn = $this->input->post('isbn');
                 $jumlah_buku = $this->input->post('jumlah_buku');
                 $lokasi = $this->input->post('lokasi');
-                $tgl_input = $this->input->post('tgl_input');
 
                 $value = array(
                     'judul' => $judul,
@@ -99,8 +96,7 @@
                     'thn_terbit' => $thn_terbit,
                     'isbn' => $isbn,
                     'jumlah_buku' => $jumlah_buku,
-                    'lokasi' => $lokasi,
-                    'tgl_input' => $tgl_input
+                    'lokasi' => $lokasi
                 );
 
                 $where = array

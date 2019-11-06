@@ -22,7 +22,6 @@
                 <th>ISBN</th>
                 <th>Jumlah Buku</th>
                 <th>Lokasi</th>
-                <th>Tanggal Input</th>
                 <th>Tindakan</th>
             </tr>
         </thead>
@@ -38,7 +37,6 @@
                     <td><?= $row->isbn ?></td>
                     <td><?= $row->jumlah_buku ?></td>
                     <td><?= $row->lokasi ?></td>
-                    <td><?= $row->tgl_input ?></td>
                     <td>
                         <a href="<?= base_url('buku/delete?id=' . $row->id) ?>">
                             <button class="btn btn-danger">Delete</button>

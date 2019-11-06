@@ -97,7 +97,7 @@
                 <!-- sidebar menu start-->
                 <ul class="sidebar-menu">
                     <li class="sub-menu">
-                        <a class="" href="<?= base_url('home') ?>">
+                        <a class="" href="index.html">
                             <i class="icon_house_alt"></i>
                             <span>Dashboard</span>
                         </a>
@@ -151,47 +151,69 @@
                 </div>
                 <div class="row">
                     <div class="col-lg-12">
-                        <a href="<?= base_url('buku/insert?page_insert=yes') ?>">
-                        <button class="btn btn-primary" style="margin-bottom:10px;">Tambah Buku</button></a>
                         <section class="panel">
-                            <table class="table table-striped">
-                                <thead>
-                                    <tr>
-                                        <th>id</th>
-                                        <th>Judul Buku</th>
-                                        <th>Pengarang</th>
-                                        <th>Penerbit</th>
-                                        <th>Tahun Penerbit</th>
-                                        <th>ISBN</th>
-                                        <th>Jumlah Buku</th>
-                                        <th>Lokasi</th>
-                                        <th>Tindakan</th>
-                                    </tr>
-                                </thead>
-                                <tbody>
-                                    <?php foreach ($buku as $row) {
-                                        ?>
-                                        <tr>
-                                            <td><?= $row->id ?></td>
-                                            <td><?= $row->judul ?> </td>
-                                            <td><?= $row->pengarang ?></td>
-                                            <td><?= $row->penerbit ?></td>
-                                            <td><?= $row->thn_terbit ?></td>
-                                            <td><?= $row->isbn ?></td>
-                                            <td><?= $row->jumlah_buku ?></td>
-                                            <td><?= $row->lokasi ?></td>
-                                            <td>
-                                                <a href="<?= base_url('buku/delete?id=' . $row->id) ?>">
-                                                    <button class="btn btn-danger">Delete</button>
-                                                </a>
-                                                <a href="<?= base_url('buku/editPage?id=' . $row->id) ?>">
-                                                    <button class="btn btn-info">Edit</button>
-                                                </a>
-                                            </td>
-                                        </tr>
-                                    <?php } ?>
-                                </tbody>
-                            </table>
+                            <header class="panel-heading">
+                                Tambah Buku
+                            </header>
+                            <div class="panel-body">
+                                <div class="form">
+                                    <form class="form-validate form-horizontal " id="register_form" method="post" action="<?= base_url('buku/editBuku') ?>">
+                                        <div class="form-group ">
+                                            <div class="col-lg-10">
+                                                <input class=" form-control" name="id" type="hidden" value="<?= $buku->id ?>" required />
+                                            </div>
+                                        </div>
+                                        <div class="form-group ">
+                                            <label for="judul" class="control-label col-lg-2">Judul Buku<span class="required">*</span></label>
+                                            <div class="col-lg-10">
+                                                <input class=" form-control" name="judul" type="text" value="<?= $buku->judul ?>" required />
+                                            </div>
+                                        </div>
+                                        <div class="form-group ">
+                                            <label for="pengarang" class="control-label col-lg-2">Pengarang<span class="required">*</span></label>
+                                            <div class="col-lg-10">
+                                                <input class=" form-control" name="pengarang" type="text" value=<?= $buku->pengarang ?> required />
+                                            </div>
+                                        </div>
+                                        <div class="form-group ">
+                                            <label for="penerbit" class="control-label col-lg-2">Penerbit<span class="required">*</span></label>
+                                            <div class="col-lg-10">
+                                                <input class=" form-control" name="penerbit" type="text" value=<?= $buku->penerbit ?> required />
+                                            </div>
+                                        </div>
+                                        <div class="form-group ">
+                                            <label for="thn_terbit" class="control-label col-lg-2">Tahun Terbit<span class="required">*</span></label>
+                                            <div class="col-lg-10">
+                                                <input class=" form-control" name="thn_terbit" type="number" value=<?= $buku->thn_terbit ?> required />
+                                            </div>
+                                        </div>
+                                        <div class="form-group ">
+                                            <label for="isbn" class="control-label col-lg-2">ISBN<span class="required">*</span></label>
+                                            <div class="col-lg-10">
+                                                <input class=" form-control" name="isbn" type="text" value=<?= $buku->isbn ?> required />
+                                            </div>
+                                        </div>
+                                        <div class="form-group ">
+                                            <label for="jumlah_buku" class="control-label col-lg-2">Jumlah Buku<span class="required">*</span></label>
+                                            <div class="col-lg-10">
+                                                <input class=" form-control" name="jumlah_buku" type="number" value=<?= $buku->jumlah_buku ?> required />
+                                            </div>
+                                        </div>
+                                        <div class="form-group ">
+                                            <label for="lokasi" class="control-label col-lg-2">Lokasi<span class="required">*</span></label>
+                                            <div class="col-lg-10">
+                                                <input class=" form-control" name="lokasi" type="text" required />
+                                            </div>
+                                        </div>
+                                        <div class="form-group">
+                                            <div class="col-lg-offset-2 col-lg-10">
+                                                <button class="btn btn-primary" type="submit" name="submit">Save</button>
+                                                <button class="btn btn-default" type="button">Cancel</button>
+                                            </div>
+                                        </div>
+                                    </form>
+                                </div>
+                            </div>
                         </section>
                     </div>
                 </div>
