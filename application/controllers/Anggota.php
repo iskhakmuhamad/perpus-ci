@@ -99,4 +99,11 @@ class Anggota extends CI_Controller{
             redirect('anggota');
         }
     }
+
+    public function search()
+    {
+        $search = $this->input->get('search');
+        $data['anggota'] = $this->model->search($search);
+        $this->load->view('dashboard/v_anggota', $data);
+    }
 }

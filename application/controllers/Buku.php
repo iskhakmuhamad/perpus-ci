@@ -111,6 +111,12 @@
             }
         }
 
+        public function search()
+        {
+            $search = $this->input->get('search');
+            $data['buku'] = $this->model->search($search);
+            $this->load->view('dashboard/v_buku', $data);
+        }
 
     }
 ?>

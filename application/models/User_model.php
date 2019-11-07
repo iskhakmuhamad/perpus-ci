@@ -27,4 +27,11 @@ class User_model extends CI_Model
             ->set($value)
             ->update($this->table);
     }
+    public function search($key)
+    {
+        $this->db->select("*");
+        $this->db->from($this->table);
+        $this->db->like('username', $key);
+        return $this->db->get()->result();
+    }
 }

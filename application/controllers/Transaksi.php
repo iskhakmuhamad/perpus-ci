@@ -10,7 +10,7 @@
 
         public function index()
         {
-            $data['tranksaksi'] = $this->model->getAll();
+            $data['transaksi'] = $this->model->getAll();
             $this ->load->view('dashboard/v_transaksi', $data);
         }
 
@@ -106,7 +106,12 @@
                 }
             }
         }
-
+    public function search()
+    {
+        $search = $this->input->get('search');
+        $data['transaksi'] = $this->model->search($search);
+        $this->load->view('dashboard/v_transaksi', $data);
+    }
 
     }
 ?>

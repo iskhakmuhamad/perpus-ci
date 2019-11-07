@@ -54,8 +54,8 @@
                 <!--  search form start -->
                 <ul class="nav top-menu">
                     <li>
-                        <form class="navbar-form">
-                            <input class="form-control" placeholder="Search" type="text">
+                        <form class="navbar-form" action="<?= base_url('transaksi/search') ?>">
+                            <input class="form-control" placeholder="Search by Nim" type="text" name="search">
                         </form>
                     </li>
                 </ul>
@@ -83,7 +83,7 @@
                                 </tr>
                             </thead>
                             <tbody>
-                                <?php foreach ($tranksaksi as $row) {
+                                <?php foreach ($transaksi as $row) {
                                     ?>
                                     <tr>
                                         <td><?= $row->id ?></td>

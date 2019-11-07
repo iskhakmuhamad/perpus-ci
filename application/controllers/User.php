@@ -93,4 +93,11 @@ class User extends CI_Controller
             redirect('user');
         }
     }
+
+    public function search()
+    {
+        $search = $this->input->get('search');
+        $data['user'] = $this->model->search($search);
+        $this->load->view('dashboard/v_user', $data);
+    }
 }

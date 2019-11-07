@@ -54,8 +54,8 @@
                 <!--  search form start -->
                 <ul class="nav top-menu">
                     <li>
-                        <form class="navbar-form">
-                            <input class="form-control" placeholder="Search" type="text">
+                        <form class="navbar-form" method="get" action="<?= base_url('buku/search') ?>">
+                            <input class="form-control" name="search" placeholder="Search by Title" type="text">
                         </form>
                     </li>
                 </ul>
@@ -64,7 +64,7 @@
 
             <?php include('headBuku.php') ?>
 
-            
+
             <div class="row">
                 <div class="col-lg-12">
                     <a href="<?= base_url('buku/insert?page_insert=yes') ?>">

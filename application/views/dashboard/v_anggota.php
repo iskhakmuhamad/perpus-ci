@@ -54,8 +54,8 @@
                 <!--  search form start -->
                 <ul class="nav top-menu">
                     <li>
-                        <form class="navbar-form">
-                            <input class="form-control" placeholder="Search" type="text">
+                        <form class="navbar-form" action="<?= base_url('anggota/search') ?>">
+                            <input class="form-control" placeholder="Search by Nim" type="text" name="search">
                         </form>
                     </li>
                 </ul>
@@ -74,7 +74,7 @@
                                 <tr>
                                     <th>Nim</th>
                                     <th>Nama</th>
-                                    <th>Tenpat Lahir</th>
+                                    <th>TeMpat Lahir</th>
                                     <th>Tanggal Lahir</th>
                                     <th>Jenis Kelamin</th>
                                     <th>Prodi</th>
