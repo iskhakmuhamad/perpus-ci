@@ -1,19 +1,21 @@
 <?php
-class Anggota extends CI_Controller{
+class User extends CI_Controller
+{
     public function __construct()
     {
         parent::__construct();
-        $this->load->model('anggota_model', 'model');
+        $this->load->model('user_model', 'model');
     }
     public function index()
     {
-        $data['anggota'] = $this->model->getAll();
-        $this->load->view('dashboard/v_anggota',$data);
+        $data['user'] = $this->model->getAll();
+        $this->load->view('dashboard/v_user', $data);
     }
+    
     public function insert()
     {
         if (isset($_GET['page_insert'])) {
-            $this->load->view('dashboard/v_insertAnggota');
+            $this->load->view('dashboard/v_insertUser');
         }
         if (isset($_POST['submit'])) {
             $nim = $this->input->post('nim');
@@ -37,7 +39,7 @@ class Anggota extends CI_Controller{
             $insert = $this->model->insertAnggota($value);
 
             if ($insert) {
-                redirect('anggota');
+                redirect('user');
             }
         }
     }
@@ -49,11 +51,11 @@ class Anggota extends CI_Controller{
             'nim' => $nim
         );
 
-        $getAnggota['anggota'] = $this->model->getById($getId);
-        $this->load->view('dashboard/v_editAnggota', $getAnggota);
+        $getUser['user'] = $this->model->getById($getId);
+        $this->load->view('dashboard/v_editUser', $getUser);
     }
 
-    public function editAnggota()
+    public function editUser()
     {
         if (isset($_POST['submit'])) {
             $id = $this->input->post('id');
