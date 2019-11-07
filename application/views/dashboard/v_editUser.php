@@ -97,12 +97,12 @@
                 <!-- sidebar menu start-->
                 <ul class="sidebar-menu">
                     <li class="sub-menu">
-                        <a class="" href="<?= base_url('home') ?>">
+                        <a class="" href="index.html">
                             <i class="icon_house_alt"></i>
                             <span>Dashboard</span>
                         </a>
                     </li>
-                    <li class="sub-menu">
+                    <li class="active">
                         <a href="<?= base_url('buku') ?>" class="">
                             <i class="icon_documents_alt"></i>
                             <span>Buku</span>
@@ -110,15 +110,15 @@
                         </a>
                     </li>
                     <li class="sub-menu">
-                        <a href="<?= base_url('anggota') ?>" class="">
+                        <a href="javascript:;" class="">
                             <i class="icon_group"></i>
                             <span>Anggota</span>
                             <span class="arrow arrow-right"></span>
                         </a>
                     </li>
-                    <li class="active">
-                        <a href="<?= base_url('user') ?>" class="">
-                            <i class="icon_group"></i>
+                    <li>
+                        <a class="active" href="">
+                            <i class="icon_profile"></i>
                             <span>User</span>
                             <span class="arrow arrow-right"></span>
                         </a>
@@ -151,43 +151,53 @@
                 </div>
                 <div class="row">
                     <div class="col-lg-12">
-                        <a href="<?= base_url('user/insert?page_insert=yes') ?>">
-                            <button class="btn btn-primary" style="margin-bottom:10px;">Tambah User</button></a>
                         <section class="panel">
-                            <table class="table table-striped">
-                                <thead>
-                                    <tr>
-                                        <th>Id</th>
-                                        <th>Nama</th>
-                                        <th>Username</th>
-                                        <th>Password</th>
-                                        <th>Email</th>
-                                        <th>Level</th>
-                                        <th>Tindakan</th>
-                                    </tr>
-                                </thead>
-                                <tbody>
-                                    <?php foreach ($user as $row) {
-                                        ?>
-                                        <tr>
-                                            <td><?= $row->id ?></td>
-                                            <td><?= $row->nama ?> </td>
-                                            <td><?= $row->username ?></td>
-                                            <td><?= $row->password ?></td>
-                                            <td><?= $row->email ?></td>
-                                            <td><?= $row->level ?></td>
-                                            <td>
-                                                <a href="<?= base_url('user/delete?id=' . $row->id) ?>">
-                                                    <button class="btn btn-danger">Delete</button>
-                                                </a>
-                                                <a href="<?= base_url('user/editPage?id=' . $row->id) ?>">
-                                                    <button class="btn btn-info">Edit</button>
-                                                </a>
-                                            </td>
-                                        </tr>
-                                    <?php } ?>
-                                </tbody>
-                            </table>
+                            <header class="panel-heading">
+                                Tambah User
+                            </header>
+                            <div class="panel-body">
+                                <div class="form">
+                                    <form class="form-validate form-horizontal " id="register_form" method="post" action="<?= base_url('user/editUser') ?>">
+                                        <div class="form-group ">
+                                            <input name="id" type="hidden" value="<?= $user->id ?>" />
+                                            <label for="nama" class="control-label col-lg-2">Nama Lengkap<span class="required">*</span></label>
+                                            <div class="col-lg-10">
+                                                <input class=" form-control" id="fullname" name="nama" value="<?= $user->nama ?>" type="text" />
+                                            </div>
+                                        </div>
+                                        <div class="form-group ">
+                                            <label for="username" class="control-label col-lg-2">Username<span class="required">*</span></label>
+                                            <div class="col-lg-10">
+                                                <input class=" form-control" name="username" type="text" value="<?= $user->username ?>" required />
+                                            </div>
+                                        </div>
+                                        <div class="form-group ">
+                                            <label for="password" class="control-label col-lg-2">Password<span class="required">*</span></label>
+                                            <div class="col-lg-10">
+                                                <input class=" form-control" name="password" type="text" value="<?= $user->password ?>" required />
+                                            </div>
+                                        </div>
+                                        <div class="form-group ">
+                                            <label for="email" class="control-label col-lg-2">Email<span class="required">*</span></label>
+                                            <div class="col-lg-10">
+                                                <input class="form-control" name="email" type="email" value="<?= $user->email ?>" required />
+                                            </div>
+                                        </div>
+                                        <div class="form-group ">
+                                            <label for="level" class="control-label col-lg-2">Level<span class="required">*</span></label>
+                                            <div class="col-lg-10">
+                                                <input class="form-control" name="level" type="text" value="<?= $user->level ?>" required />
+                                            </div>
+                                        </div>
+                                        <div class="form-group">
+                                            <div class="col-lg-offset-2 col-lg-10">
+                                                <button class="btn btn-primary" type="submit" name="submit">Save</button>
+                                                <button class="btn btn-default" type="button">Cancel</button>
+                                            </div>
+                                        </div>
+                                    </form>
+                                </div>
+                            </div>
                         </section>
                     </div>
                 </div>

@@ -18,25 +18,21 @@ class User extends CI_Controller
             $this->load->view('dashboard/v_insertUser');
         }
         if (isset($_POST['submit'])) {
-            $nim = $this->input->post('nim');
             $nama = $this->input->post('nama');
-            $tempat_lahir = $this->input->post('tempat_lahir');
-            $tgl_lahir = $this->input->post('tgl_lahir');
-            $jk = $this->input->post('jk');
-            $prodi = $this->input->post('prodi');
-            $thn_masuk = $this->input->post('thn_masuk');
+            $username = $this->input->post('username');
+            $password = $this->input->post('password');
+            $email = $this->input->post('email');
+            $level = $this->input->post('level');
 
             $value = array(
-                'nim' => $nim,
                 'nama' => $nama,
-                'tempat_lahir' => $tempat_lahir,
-                'tgl_lahir' => $tgl_lahir,
-                'jk' => $jk,
-                'prodi' => $prodi,
-                'thn_masuk' => $thn_masuk
+                'username' => $username,
+                'password' => $password,
+                'email' => $email,
+                'level' => $level
             );
 
-            $insert = $this->model->insertAnggota($value);
+            $insert = $this->model->insertUser($value);
 
             if ($insert) {
                 redirect('user');
@@ -46,9 +42,9 @@ class User extends CI_Controller
 
     public function editPage()
     {
-        $nim = $_GET['nim'];
+        $id = $_GET['id'];
         $getId = array(
-            'nim' => $nim
+            'id' => $id
         );
 
         $getUser['user'] = $this->model->getById($getId);
@@ -59,46 +55,42 @@ class User extends CI_Controller
     {
         if (isset($_POST['submit'])) {
             $id = $this->input->post('id');
-            $nim = $this->input->post('nim');
             $nama = $this->input->post('nama');
-            $tempat_lahir = $this->input->post('tempat_lahir');
-            $tgl_lahir = $this->input->post('tgl_lahir');
-            $jk = $this->input->post('jk');
-            $prodi = $this->input->post('prodi');
-            $thn_masuk = $this->input->post('thn_masuk');
+            $username = $this->input->post('username');
+            $password = $this->input->post('password');
+            $email = $this->input->post('email');
+            $level = $this->input->post('level');
 
             $value = array(
-                'nim' => $nim,
                 'nama' => $nama,
-                'tempat_lahir' => $tempat_lahir,
-                'tgl_lahir' => $tgl_lahir,
-                'jk' => $jk,
-                'prodi' => $prodi,
-                'thn_masuk' => $thn_masuk
+                'username' => $username,
+                'password' => $password,
+                'email' => $email,
+                'level' => $level
             );
 
             $where = array(
-                'nim' => $id
+                'id' => $id
             );
 
             $update = $this->model->update($value, $where);
             if ($update) {
-                redirect('anggota');
+                redirect('user');
             }
         }
     }
 
     public function delete()
     {
-        $nim = $_GET['nim'];
+        $id = $_GET['id'];
 
         $delete = array(
-            'nim' => $nim
+            'id' => $id
         );
 
-        $deleteAnggota = $this->model->delete($delete);
-        if ($deleteAnggota) {
-            redirect('anggota');
+        $deleteUser = $this->model->delete($delete);
+        if ($deleteUser) {
+            redirect('user');
         }
     }
 }

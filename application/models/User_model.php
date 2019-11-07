@@ -6,7 +6,7 @@ class User_model extends CI_Model
     {
         return $this->db->get($this->table)->result();
     }
-    public function insertAnggota($value)
+    public function insertUser($value)
     {
         return $this->db->insert($this->table, $value);
     }
