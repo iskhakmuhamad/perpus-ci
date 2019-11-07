@@ -39,14 +39,14 @@
                     <span>Dashboard</span>
                 </a>
             </li>
-            <li class="sub-menu">
+            <li class="active">
                 <a href="<?= base_url('buku') ?>" class="">
                     <i class="icon_documents_alt"></i>
                     <span>Buku</span>
                     <span class="arrow arrow-right"></span>
                 </a>
             </li>
-            <li class="active">
+            <li class="sub-menu">
                 <a href="<?= base_url('anggota') ?>" class="">
                     <i class="icon_group"></i>
                     <span>Anggota</span>
@@ -79,10 +79,10 @@
         <!--overview start-->
         <div class="row">
             <div class="col-lg-12">
-                <h3 class="page-header"><i class="fa fa-group"></i>Anggota</h3>
+                <h3 class="page-header"><i class="fa fa-book"></i>BUKU</h3>
                 <ol class="breadcrumb">
                     <li><i class="fa fa-home"></i><a href="<?= base_url('home') ?>">Home</a></li>
-                    <li><i class="fa fa-group"></i>Anggota</li>
+                    <li><i class="fa fa-book"></i>Buku</li>
                 </ol>
             </div>
         </div>

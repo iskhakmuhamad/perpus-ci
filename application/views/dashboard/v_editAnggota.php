@@ -49,131 +49,133 @@
             <!--logo start-->
             <a href="index.php" class="logo">Perpus<span class="lite">takaan</span></a>
             <!--logo end-->
-            <?php include('headAnggotaE.php') ?>
-                <div class="row">
-                    <div class="col-lg-12">
-                        <section class="panel">
-                            <header class="panel-heading">
-                                Tambah Anggota
-                            </header>
-                            <div class="panel-body">
-                                <div class="form">
-                                    <form class="form-validate form-horizontal " id="register_form" method="post" action="<?= base_url('anggota/editAnggota') ?>">
-                                        <div class="form-group ">
-                                            <input type="hidden" name="id" value="<?= $anggota->nim ?>">
-                                            <label for="nim" class="control-label col-lg-2">NIM<span class="required">*</span></label>
-                                            <div class="col-lg-10">
-                                                <input class=" form-control" name="nim" type="text" value="<?= $anggota->nim ?>" required />
-                                            </div>
+
+            <?php include('headAnggota.php') ?>
+
+            <div class="row">
+                <div class="col-lg-12">
+                    <section class="panel">
+                        <header class="panel-heading">
+                            Tambah Anggota
+                        </header>
+                        <div class="panel-body">
+                            <div class="form">
+                                <form class="form-validate form-horizontal " id="register_form" method="post" action="<?= base_url('anggota/editAnggota') ?>">
+                                    <div class="form-group ">
+                                        <input type="hidden" name="id" value="<?= $anggota->nim ?>">
+                                        <label for="nim" class="control-label col-lg-2">NIM<span class="required">*</span></label>
+                                        <div class="col-lg-10">
+                                            <input class=" form-control" name="nim" type="text" value="<?= $anggota->nim ?>" required />
                                         </div>
-                                        <div class="form-group ">
-                                            <label for="nama" class="control-label col-lg-2">Nama Lengkap<span class="required">*</span></label>
-                                            <div class="col-lg-10">
-                                                <input class=" form-control" id="fullname" name="nama" type="text" value="<?= $anggota->nama ?>" />
-                                            </div>
+                                    </div>
+                                    <div class="form-group ">
+                                        <label for="nama" class="control-label col-lg-2">Nama Lengkap<span class="required">*</span></label>
+                                        <div class="col-lg-10">
+                                            <input class=" form-control" id="fullname" name="nama" type="text" value="<?= $anggota->nama ?>" />
                                         </div>
-                                        <div class="form-group ">
-                                            <label for="tempat_lahir" class="control-label col-lg-2">Tempat Lahir<span class="required">*</span></label>
-                                            <div class="col-lg-10">
-                                                <input class=" form-control" name="tempat_lahir" type="text" value="<?= $anggota->tempat_lahir ?>" required />
-                                            </div>
+                                    </div>
+                                    <div class="form-group ">
+                                        <label for="tempat_lahir" class="control-label col-lg-2">Tempat Lahir<span class="required">*</span></label>
+                                        <div class="col-lg-10">
+                                            <input class=" form-control" name="tempat_lahir" type="text" value="<?= $anggota->tempat_lahir ?>" required />
                                         </div>
-                                        <div class="form-group ">
-                                            <label for="tgl_lahir" class="control-label col-lg-2">Tanggal Lahir<span class="required">*</span></label>
-                                            <div class="col-lg-10">
-                                                <input class=" form-control" name="tgl_lahir" type="date" value="<?= $anggota->tgl_lahir ?>" required />
-                                            </div>
+                                    </div>
+                                    <div class="form-group ">
+                                        <label for="tgl_lahir" class="control-label col-lg-2">Tanggal Lahir<span class="required">*</span></label>
+                                        <div class="col-lg-10">
+                                            <input class=" form-control" name="tgl_lahir" type="date" value="<?= $anggota->tgl_lahir ?>" required />
                                         </div>
-                                        <div class="form-group ">
-                                            <label for="jk" class="control-label col-lg-2">Jenis Kelamin<span class="required">*</span></label>
-                                            <div class="col-lg-10">
-                                                <div class="checkbox">
-                                                    <div class="radio">
-                                                        <label>
-                                                            <input type="radio" name="jk" id="optionsRadios1" value="L">
-                                                            Laki - Laki
-                                                        </label>
-                                                    </div>
-                                                    <div class="radio">
-                                                        <label>
-                                                            <input type="radio" name="jk" id="optionsRadios2" value="P">
-                                                            Perempuan
-                                                        </label>
-                                                    </div>
+                                    </div>
+                                    <div class="form-group ">
+                                        <label for="jk" class="control-label col-lg-2">Jenis Kelamin<span class="required">*</span></label>
+                                        <div class="col-lg-10">
+                                            <div class="checkbox">
+                                                <div class="radio">
+                                                    <label>
+                                                        <input type="radio" name="jk" id="optionsRadios1" value="L">
+                                                        Laki - Laki
+                                                    </label>
+                                                </div>
+                                                <div class="radio">
+                                                    <label>
+                                                        <input type="radio" name="jk" id="optionsRadios2" value="P">
+                                                        Perempuan
+                                                    </label>
                                                 </div>
                                             </div>
                                         </div>
-                                        <div class="form-group ">
-                                            <label for="thn_masuk" class="control-label col-lg-2">Tahun Masuk<span class="required">*</span></label>
-                                            <div class="col-lg-10">
-                                                <input class="form-control" name="thn_masuk" type="text" value="<?= $anggota->thn_masuk ?>" required />
-                                            </div>
+                                    </div>
+                                    <div class="form-group ">
+                                        <label for="thn_masuk" class="control-label col-lg-2">Tahun Masuk<span class="required">*</span></label>
+                                        <div class="col-lg-10">
+                                            <input class="form-control" name="thn_masuk" type="text" value="<?= $anggota->thn_masuk ?>" required />
                                         </div>
-                                        <div class="form-group ">
-                                            <label for="prodi" class="control-label col-lg-2">Prodi<span class="required">*</span></label>
-                                            <div class="col-lg-10">
-                                                <input class=" form-control" name="prodi" type="text" value="<?= $anggota->prodi ?>" required />
-                                            </div>
+                                    </div>
+                                    <div class="form-group ">
+                                        <label for="prodi" class="control-label col-lg-2">Prodi<span class="required">*</span></label>
+                                        <div class="col-lg-10">
+                                            <input class=" form-control" name="prodi" type="text" value="<?= $anggota->prodi ?>" required />
                                         </div>
-                                        <div class="form-group">
-                                            <div class="col-lg-offset-2 col-lg-10">
-                                                <button class="btn btn-primary" type="submit" name="submit">Save</button>
-                                                <button class="btn btn-default" type="button">Cancel</button>
-                                            </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <div class="col-lg-offset-2 col-lg-10">
+                                            <button class="btn btn-primary" type="submit" name="submit">Save</button>
+                                            <button class="btn btn-default" type="button">Cancel</button>
                                         </div>
-                                    </form>
-                                </div>
+                                    </div>
+                                </form>
                             </div>
-                        </section>
-                    </div>
+                        </div>
+                    </section>
                 </div>
-                <!-- project team & activity end -->
-                <!--main content end-->
-            </section>
-            <!-- container section start -->
+            </div>
+            <!-- project team & activity end -->
+            <!--main content end-->
+    </section>
+    <!-- container section start -->
 
-            <!-- javascripts -->
-            <script src="<?= base_url('assets/dashboard/') ?>js/jquery.js"></script>
-            <script src="<?= base_url('assets/dashboard/') ?>js/jquery-ui-1.10.4.min.js"></script>
-            <script src="<?= base_url('assets/dashboard/') ?>js/jquery-1.8.3.min.js"></script>
-            <script type="text/javascript" src="<?= base_url('assets/dashboard/') ?>js/jquery-ui-1.9.2.custom.min.js"></script>
-            <!-- bootstrap -->
-            <script src="<?= base_url('assets/dashboard/') ?>js/bootstrap.min.js"></script>
-            <!-- nice scroll -->
-            <script src="<?= base_url('assets/dashboard/') ?>js/jquery.scrollTo.min.js"></script>
-            <script src="<?= base_url('assets/dashboard/') ?>js/jquery.nicescroll.js" type="text/javascript"></script>
-            <!-- charts scripts -->
-            <script src="<?= base_url('assets/dashboard/') ?>assets/jquery-knob/js/jquery.knob.js"></script>
-            <script src="<?= base_url('assets/dashboard/') ?>js/jquery.sparkline.js" type="text/javascript"></script>
-            <script src="<?= base_url('assets/dashboard/') ?>assets/jquery-easy-pie-chart/jquery.easy-pie-chart.js"></script>
-            <script src="<?= base_url('assets/dashboard/') ?>js/owl.carousel.js"></script>
-            <!-- jQuery full calendar -->
-            <script src="<?= base_url('assets/dashboard/') ?>js/fullcalendar.min.js">
-            </script>
-            <!-- Full Google Calendar - Calendar -->
-            <script src="<?= base_url('assets/dashboard/') ?>assets/fullcalendar/fullcalendar/fullcalendar.js"></script>
-            <!--script for this page only-->
-            <script src="<?= base_url('assets/dashboard/') ?>js/calendar-custom.js"></script>
-            <script src="<?= base_url('assets/dashboard/') ?>js/jquery.rateit.min.js"></script>
-            <!-- custom select -->
-            <script src="<?= base_url('assets/dashboard/') ?>js/jquery.customSelect.min.js"></script>
-            <script src="<?= base_url('assets/dashboard/') ?>assets/chart-master/Chart.js"></script>
+    <!-- javascripts -->
+    <script src="<?= base_url('assets/dashboard/') ?>js/jquery.js"></script>
+    <script src="<?= base_url('assets/dashboard/') ?>js/jquery-ui-1.10.4.min.js"></script>
+    <script src="<?= base_url('assets/dashboard/') ?>js/jquery-1.8.3.min.js"></script>
+    <script type="text/javascript" src="<?= base_url('assets/dashboard/') ?>js/jquery-ui-1.9.2.custom.min.js"></script>
+    <!-- bootstrap -->
+    <script src="<?= base_url('assets/dashboard/') ?>js/bootstrap.min.js"></script>
+    <!-- nice scroll -->
+    <script src="<?= base_url('assets/dashboard/') ?>js/jquery.scrollTo.min.js"></script>
+    <script src="<?= base_url('assets/dashboard/') ?>js/jquery.nicescroll.js" type="text/javascript"></script>
+    <!-- charts scripts -->
+    <script src="<?= base_url('assets/dashboard/') ?>assets/jquery-knob/js/jquery.knob.js"></script>
+    <script src="<?= base_url('assets/dashboard/') ?>js/jquery.sparkline.js" type="text/javascript"></script>
+    <script src="<?= base_url('assets/dashboard/') ?>assets/jquery-easy-pie-chart/jquery.easy-pie-chart.js"></script>
+    <script src="<?= base_url('assets/dashboard/') ?>js/owl.carousel.js"></script>
+    <!-- jQuery full calendar -->
+    <script src="<?= base_url('assets/dashboard/') ?>js/fullcalendar.min.js">
+    </script>
+    <!-- Full Google Calendar - Calendar -->
+    <script src="<?= base_url('assets/dashboard/') ?>assets/fullcalendar/fullcalendar/fullcalendar.js"></script>
+    <!--script for this page only-->
+    <script src="<?= base_url('assets/dashboard/') ?>js/calendar-custom.js"></script>
+    <script src="<?= base_url('assets/dashboard/') ?>js/jquery.rateit.min.js"></script>
+    <!-- custom select -->
+    <script src="<?= base_url('assets/dashboard/') ?>js/jquery.customSelect.min.js"></script>
+    <script src="<?= base_url('assets/dashboard/') ?>assets/chart-master/Chart.js"></script>
 
-            <!--custome script for all page-->
-            <script src="<?= base_url('assets/dashboard/') ?>js/scripts.js"></script>
-            <!-- custom script for this page-->
-            <script src="<?= base_url('assets/dashboard/') ?>js/sparkline-chart.js"></script>
-            <script src="<?= base_url('assets/dashboard/') ?>js/easy-pie-chart.js"></script>
-            <script src="<?= base_url('assets/dashboard/') ?>js/jquery-jvectormap-1.2.2.min.js"></script>
-            <script src="<?= base_url('assets/dashboard/') ?>js/jquery-jvectormap-world-mill-en.js"></script>
-            <script src="<?= base_url('assets/dashboard/') ?>js/xcharts.min.js"></script>
-            <script src="<?= base_url('assets/dashboard/') ?>js/jquery.autosize.min.js"></script>
-            <script src="<?= base_url('assets/dashboard/') ?>js/jquery.placeholder.min.js"></script>
-            <script src="<?= base_url('assets/dashboard/') ?>js/gdp-data.js"></script>
-            <script src="<?= base_url('assets/dashboard/') ?>js/morris.min.js"></script>
-            <script src="<?= base_url('assets/dashboard/') ?>js/sparklines.js"></script>
-            <script src="<?= base_url('assets/dashboard/') ?>js/charts.js"></script>
-            <script src="<?= base_url('assets/dashboard/') ?>js/jquery.slimscroll.min.js"></script>
+    <!--custome script for all page-->
+    <script src="<?= base_url('assets/dashboard/') ?>js/scripts.js"></script>
+    <!-- custom script for this page-->
+    <script src="<?= base_url('assets/dashboard/') ?>js/sparkline-chart.js"></script>
+    <script src="<?= base_url('assets/dashboard/') ?>js/easy-pie-chart.js"></script>
+    <script src="<?= base_url('assets/dashboard/') ?>js/jquery-jvectormap-1.2.2.min.js"></script>
+    <script src="<?= base_url('assets/dashboard/') ?>js/jquery-jvectormap-world-mill-en.js"></script>
+    <script src="<?= base_url('assets/dashboard/') ?>js/xcharts.min.js"></script>
+    <script src="<?= base_url('assets/dashboard/') ?>js/jquery.autosize.min.js"></script>
+    <script src="<?= base_url('assets/dashboard/') ?>js/jquery.placeholder.min.js"></script>
+    <script src="<?= base_url('assets/dashboard/') ?>js/gdp-data.js"></script>
+    <script src="<?= base_url('assets/dashboard/') ?>js/morris.min.js"></script>
+    <script src="<?= base_url('assets/dashboard/') ?>js/sparklines.js"></script>
+    <script src="<?= base_url('assets/dashboard/') ?>js/charts.js"></script>
+    <script src="<?= base_url('assets/dashboard/') ?>js/jquery.slimscroll.min.js"></script>
 
 </body>
 

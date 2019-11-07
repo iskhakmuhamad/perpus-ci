@@ -65,7 +65,7 @@
                 </a>
             </li>
             <li class="sub-menu">
-                <a class="<?= base_url('user') ?>" href="">
+                <a class="" href="<?= base_url('user') ?>">
                     <i class="icon_profile"></i>
                     <span>User</span>
                     <span class="arrow arrow-right"></span>
