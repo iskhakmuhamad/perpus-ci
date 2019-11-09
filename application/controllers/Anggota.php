@@ -3,6 +3,11 @@ class Anggota extends CI_Controller{
     public function __construct()
     {
         parent::__construct();
+        if (!$this->session->userdata('logged_in')) {
+            $message = '<div style="color:red; text-align: center;font-family: sans-serif,cursive ;"><i><b>Silahkan Login Dahulu</b></i></div>';
+            $this->session->set_flashdata('noLogin', $message);
+            redirect('login');
+        }
         $this->load->model('anggota_model', 'model');
     }
     public function index()

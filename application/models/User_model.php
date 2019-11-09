@@ -34,4 +34,13 @@ class User_model extends CI_Model
         $this->db->like('username', $key);
         return $this->db->get()->result();
     }
+
+    public function cek_login($where)
+    {
+        $user = $this->db->get_where($this->table, $where)->row();
+        if (!$user) {
+            return false;
+        }
+        return $user;
+    }
 }

@@ -5,7 +5,7 @@ class Login extends CI_Controller
 {
     public function __construct(){
         parent:: __construct();
-        $this->load->model('login_model');
+        $this->load->model('user_model','model');
     }
     public function index()
     {
@@ -18,12 +18,30 @@ class Login extends CI_Controller
                 'password' => $password
 
             );
-            $cek = $this->login_model->cek_login($where)->num_rows();
-            if ($cek>0) {
+            $user = $this->model->cek_login($where);
+            if ($user) {
+                $sessionData = array
+                (
+                    'username' => $user->username,
+                    'level'  => $user->level,
+                    'logged_in' => TRUE
+                );
+                $this->session->set_userdata($sessionData);
                 redirect('home');
             }
         }
-        $this->load->view('v_login');
+        $this->load->view('login/v_login');
+    }
+    public function logout(){
+        $sessionData = array(
+            'username',
+            'level',
+            'logged_in'
+        );
+        $this->session->unset_userdata($sessionData);
+            $message = '<div style="color: green; text-align: center;font-family: sans-serif,cursive ;"><i><b>Logout Berhasil</b></i></div>';
+            $this->session->set_flashdata('log_out', $message);
+            redirect('login');
     }
 }
 

@@ -1,15 +1,3 @@
-<div class="nav search-row" id="top_menu">
-    <!--  search form start -->
-    <ul class="nav top-menu">
-        <li>
-            <form class="navbar-form">
-                <input class="form-control" placeholder="Search" type="text">
-            </form>
-        </li>
-    </ul>
-    <!--  search form end -->
-</div>
-
 <div class="top-nav notification-row">
     <!-- notificatoin dropdown start-->
     <ul class="nav pull-right top-menu">
@@ -19,7 +7,7 @@
                 <span class="profile-ava">
                     <img alt="" src="<?= base_url('assets/dashboard/') ?>img/logo-big.png" style="width: 15px; height:15px;">
                 </span>
-                <span class="username">Admin</span>
+                <span class="username"><?= $this->session->userdata('username') ?></span>
                 <b class="caret"></b>
             </a>
             <ul class="dropdown-menu extended logout">
@@ -28,7 +16,7 @@
                     <a href="#"><i class="icon_profile"></i> My Profile</a>
                 </li>
                 <li>
-                    <a href="login.html"><i class="icon_key_alt"></i> Log Out</a>
+                    <a href="<?= base_url('login/logout') ?>"><i class="icon_key_alt"></i>Log Out</a>
                 </li>
             </ul>
         </li>
