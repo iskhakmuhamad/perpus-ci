@@ -26,13 +26,13 @@
 </div>
 </header>
 <!--header end-->
-<?php $level = $this->session->userdata('level'); ?>
+
 <!--sidebar start-->
 <aside>
     <div id="sidebar" class="nav-collapse ">
         <!-- sidebar menu start-->
         <ul class="sidebar-menu">
-            <li class="sub-menu">
+            <li class="active">
                 <a class="" href="<?= base_url('home') ?>">
                     <i class="icon_house_alt"></i>
                     <span>Dashboard</span>
@@ -45,14 +45,13 @@
                     <span class="arrow arrow-right"></span>
                 </a>
             </li>
-            <li class="active">
+            <li class="sub-menu">
                 <a href="<?= base_url('anggota') ?>" class="">
                     <i class="icon_group"></i>
                     <span>Anggota</span>
                     <span class="arrow arrow-right"></span>
                 </a>
             </li>
-            <?php if($level == 'admin') { ?>
             <li class="sub-menu">
                 <a class="" href="<?= base_url('user') ?>">
                     <i class="icon_profile"></i>
@@ -60,7 +59,6 @@
                     <span class="arrow arrow-right"></span>
                 </a>
             </li>
-            <?php } ?>
             <li class="sub-menu">
                 <a href="<?= base_url('transaksi') ?>" class="">
                     <i class="icon_table"></i>
@@ -80,10 +78,10 @@
         <!--overview start-->
         <div class="row">
             <div class="col-lg-12">
-                <h3 class="page-header"><i class="fa fa-group"></i>Anggota</h3>
+                <h3 class="page-header"><i class="fa fa-laptop"></i>Dashboard</h3>
                 <ol class="breadcrumb">
                     <li><i class="fa fa-home"></i><a href="<?= base_url('home') ?>">Home</a></li>
-                    <li><i class="fa fa-group"></i>Anggota</li>
+                    <li><i class="fa fa-laptop"></i>Dashboard</li>
                 </ol>
             </div>
         </div>

@@ -73,7 +73,7 @@
           <!--/.info-box-->
         </div>
         <!--/.col-->
-        <?php if ($level == 'admin') { ?>
+
         <div class="col-lg-3 col-md-3 col-sm-12 col-xs-12">
           <a href="<?= base_url('user') ?>">
             <div class="info-box dark-bg">
@@ -83,7 +83,6 @@
           </a>
           <!--/.info-box-->
         </div>
-        <?php } ?>
         <!--/.col-->
 
         <div class="col-lg-3 col-md-3 col-sm-12 col-xs-12">

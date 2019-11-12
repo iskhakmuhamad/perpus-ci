@@ -23,6 +23,7 @@ class Login extends CI_Controller
                 $sessionData = array
                 (
                     'username' => $user->username,
+                    'nama' =>$user->nama,
                     'level'  => $user->level,
                     'logged_in' => TRUE
                 );

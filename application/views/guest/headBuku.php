@@ -13,7 +13,7 @@
             <ul class="dropdown-menu extended logout">
                 <div class="log-arrow-up"></div>
                 <li class="eborder-top">
-                    <a href="#"><i class="icon_profile"></i> <?= $this->session->userdata('nama') ?> </a>
+                    <a href="#"><i class="icon_profile"></i><?= $this->session->userdata('nama') ?> </a>
                 </li>
                 <li>
                     <a href="<?= base_url('login/logout') ?>"><i class="icon_key_alt"></i>Log Out</a>
@@ -26,7 +26,7 @@
 </div>
 </header>
 <!--header end-->
-<?php $level = $this->session->userdata('level'); ?>
+
 <!--sidebar start-->
 <aside>
     <div id="sidebar" class="nav-collapse ">
@@ -38,29 +38,27 @@
                     <span>Dashboard</span>
                 </a>
             </li>
-            <li class="sub-menu">
+            <li class="active">
                 <a href="<?= base_url('buku') ?>" class="">
                     <i class="icon_documents_alt"></i>
                     <span>Buku</span>
                     <span class="arrow arrow-right"></span>
                 </a>
             </li>
-            <li class="active">
+            <li class="sub-menu">
                 <a href="<?= base_url('anggota') ?>" class="">
                     <i class="icon_group"></i>
                     <span>Anggota</span>
                     <span class="arrow arrow-right"></span>
                 </a>
             </li>
-            <?php if($level == 'admin') { ?>
             <li class="sub-menu">
-                <a class="" href="<?= base_url('user') ?>">
+                <a class="<?= base_url('user') ?>" href="">
                     <i class="icon_profile"></i>
                     <span>User</span>
                     <span class="arrow arrow-right"></span>
                 </a>
             </li>
-            <?php } ?>
             <li class="sub-menu">
                 <a href="<?= base_url('transaksi') ?>" class="">
                     <i class="icon_table"></i>
@@ -80,10 +78,10 @@
         <!--overview start-->
         <div class="row">
             <div class="col-lg-12">
-                <h3 class="page-header"><i class="fa fa-group"></i>Anggota</h3>
+                <h3 class="page-header"><i class="fa fa-book"></i>BUKU</h3>
                 <ol class="breadcrumb">
                     <li><i class="fa fa-home"></i><a href="<?= base_url('home') ?>">Home</a></li>
-                    <li><i class="fa fa-group"></i>Anggota</li>
+                    <li><i class="fa fa-book"></i>Buku</li>
                 </ol>
             </div>
         </div>

@@ -28,7 +28,6 @@
             <!--header end-->
 
             <!--sidebar start-->
-            <?php $level = $this->session->userdata('level'); ?>
             <aside>
                 <div id="sidebar" class="nav-collapse ">
                     <!-- sidebar menu start-->
@@ -53,15 +52,13 @@
                                 <span class="arrow arrow-right"></span>
                             </a>
                         </li>
-                        <?php if ($level == 'admin') { ?>
-                            <li class="sub-menu">
-                                <a href="<?= base_url('user') ?>" class="">
-                                    <i class="icon_group"></i>
-                                    <span>User</span>
-                                    <span class="arrow arrow-right"></span>
-                                </a>
-                            </li>
-                        <?php } ?>
+                        <li class="sub-menu">
+                            <a href="<?= base_url('user') ?>" class="">
+                                <i class="icon_group"></i>
+                                <span>User</span>
+                                <span class="arrow arrow-right"></span>
+                            </a>
+                        </li>
                         <li class="active">
                             <a href="<?= base_url('transaksi') ?>" class="">
                                 <i class="icon_table"></i>
