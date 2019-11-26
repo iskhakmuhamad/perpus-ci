@@ -51,7 +51,7 @@
             <!--logo end-->
 
             <?php include('headTransaksi.php') ?>
-            
+
             <div class="row">
                 <div class="col-lg-12">
                     <section class="panel">
@@ -64,7 +64,13 @@
                                     <div class="form-group ">
                                         <label for="judul" class="control-label col-lg-2">Judul Buku<span class="required">*</span></label>
                                         <div class="col-lg-10">
-                                            <input class="form-control" name="judul" type="text" />
+                                            <select name='judul' class="form-control m-bot15">
+                                                <?php foreach ($buku as $row) { ?>
+
+                                                    <option value='<?= $row->judul ?>'><?= $row->judul ?></option>
+
+                                                <?php } ?>
+                                            </select>
                                         </div>
                                     </div>
                                     <div class="form-group ">
@@ -76,7 +82,14 @@
                                     <div class="form-group ">
                                         <label for="nim" class="control-label col-lg-2">Nim<span class="required">*</span></label>
                                         <div class="col-lg-10">
-                                            <input class=" form-control" name="nim" type="text" required />
+                                            <!-- <input class=" form-control" name="nim" type="nim" required /> -->
+                                            <select name='nim' class="form-control m-bot15">
+                                                <?php foreach ($anggota as $row) { ?>
+
+                                                    <option value='<?= $row->nim ?>'><?= $row->nim ?></option>
+
+                                                <?php } ?>
+                                            </select>
                                         </div>
                                     </div>
                                     <div class="form-group ">

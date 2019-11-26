@@ -30,6 +30,10 @@ class Login extends CI_Controller
                 $this->session->set_userdata($sessionData);
                 redirect('home');
             }
+            else {
+                $message = '<div style="color: red; text-align: center;font-family: sans-serif,cursive ;"><i><b>Login gagal</b></i></div>';
+                $this->session->set_flashdata('failed', $message);
+            }
         }
         $this->load->view('login/v_login');
     }

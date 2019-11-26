@@ -7,10 +7,12 @@
         if (!$this->session->userdata('logged_in')) 
         {
             $message = '<div style="color:red; text-align: center;font-family: sans-serif,cursive ;"><i><b>Silahkan Login Dahulu</b></i></div>';
-            $this->session->set_flashdata('noLogin', $message);
+            $this->session->set_flashdata('failed', $message);
             redirect('login');
         }
             $this->load->model('transaksi_model' , 'model');
+            $this->load->model('anggota_model', 'Amodel');
+        $this->load->model('buku_model', 'Bmodel');
             
         }
 
@@ -24,7 +26,9 @@
         {
             if (isset($_GET['page_insert'])) 
             { 
-                $this->load->view('dashboard/v_insertTransaksi');
+                $data['anggota'] = $this->Amodel->getAll();
+                $data['buku'] = $this->Bmodel->getAll();
+                $this->load->view('dashboard/v_insertTransaksi',$data);
             }  
             if (isset($_POST['submit'])) {
                 $nama = $this->input->post('nama');
@@ -52,6 +56,11 @@
                 {
                     redirect('transaksi');
                 }
+                else {
+                    $this->session->set_flasdata('failed', '<div style="color : red "><i><b>Gagal Tambah Transaksi</b></i> </div>');
+                    redirect('transaksi');
+                }
+
             } 
         }
 

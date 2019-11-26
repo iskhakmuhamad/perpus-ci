@@ -66,8 +66,10 @@
             
             <div class="row">
                 <div class="col-lg-12">
+                    <?php if ($level == 'admin') { ?>
                     <a href="<?= base_url('anggota/insert?page_insert=yes') ?>">
                         <button class="btn btn-primary" style="margin-bottom:10px;">Tambah Anggota</button></a>
+                    <?php } ?>
                     <section class="panel">
                         <table class="table table-striped">
                             <thead>
@@ -79,7 +81,9 @@
                                     <th>Jenis Kelamin</th>
                                     <th>Prodi</th>
                                     <th>Tahun Masuk</th>
+                                    <?php if ($level == 'admin') { ?>
                                     <th>Tindakan</th>
+                                    <?php } ?>
                                 </tr>
                             </thead>
                             <tbody>
@@ -98,6 +102,7 @@
                                                 } ?></td>
                                         <td><?= $row->prodi ?></td>
                                         <td><?= $row->thn_masuk ?></td>
+                                        <?php if ($level == 'admin') { ?>
                                         <td>
                                             <a href="<?= base_url('anggota/delete?nim=' . $row->nim) ?>">
                                                 <button class="btn btn-danger">Delete</button>
@@ -106,6 +111,7 @@
                                                 <button class="btn btn-info">Edit</button>
                                             </a>
                                         </td>
+                                        <?php } ?>
                                     </tr>
                                 <?php } ?>
                             </tbody>

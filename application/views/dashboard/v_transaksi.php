@@ -65,9 +65,12 @@
             <?php include('headTransaksi.php') ?>
             <div class="row">
                 <div class="col-lg-12">
+                    <?php if ($level == 'admin') { ?>
                     <a href="<?= base_url('transaksi/insert?page_insert=yes') ?>">
                         <button class="btn btn-primary" style="margin-bottom:10px;">Tambah Tranksaksi</button></a>
+                    <?php } ?>
                     <section class="panel">
+                        <?= $this->session->flashdata('failed') ?>
                         <table class="table table-striped">
                             <thead>
                                 <tr>
@@ -79,7 +82,9 @@
                                     <th>Tanggal Kembali</th>
                                     <th>Status</th>
                                     <th>Keterangan</th>
+                                    <?php if ($level == 'admin') { ?>
                                     <th>Tindakan</th>
+                                    <?php } ?>
                                 </tr>
                             </thead>
                             <tbody>
@@ -94,6 +99,7 @@
                                         <td><?= $row->tgl_kembali ?></td>
                                         <td><?= $row->status ?></td>
                                         <td><?= $row->ket ?></td>
+                                        <?php if ($level == 'admin') { ?>
                                         <td>
                                             <a href="<?= base_url('transaksi/delete?id=' . $row->id) ?>">
                                                 <button class="btn btn-danger">Delete</button>
@@ -102,6 +108,7 @@
                                                 <button class="btn btn-info">Edit</button>
                                             </a>
                                         </td>
+                                        <?php } ?>
                                     </tr>
                                 <?php } ?>
                             </tbody>

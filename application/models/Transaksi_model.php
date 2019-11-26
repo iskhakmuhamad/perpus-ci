@@ -8,7 +8,8 @@ class Transaksi_model extends CI_Model
     }
     public function insertTransaksi($value)
     {
-        return $this->db->insert($this->table,$value);
+        $insert = $this->db->insert($this->table, $value);
+        return $insert;
     }
     public function delete($id)
     {

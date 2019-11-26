@@ -67,8 +67,10 @@
 
             <div class="row">
                 <div class="col-lg-12">
-                    <a href="<?= base_url('buku/insert?page_insert=yes') ?>">
-                        <button class="btn btn-primary" style="margin-bottom:10px;">Tambah Buku</button></a>
+                    <?php if ($level == 'admin') { ?>
+                        <a href="<?= base_url('buku/insert?page_insert=yes') ?>">
+                            <button class="btn btn-primary" style="margin-bottom:10px;">Tambah Buku</button></a>
+                    <?php } ?>
                     <section class="panel">
                         <table class="table table-striped">
                             <thead>
@@ -81,7 +83,9 @@
                                     <th>ISBN</th>
                                     <th>Jumlah Buku</th>
                                     <th>Lokasi</th>
-                                    <th>Tindakan</th>
+                                    <?php if ($level == 'admin') { ?>
+                                        <th>Tindakan</th>
+                                    <?php } ?>
                                 </tr>
                             </thead>
                             <tbody>
@@ -96,14 +100,16 @@
                                         <td><?= $row->isbn ?></td>
                                         <td><?= $row->jumlah_buku ?></td>
                                         <td><?= $row->lokasi ?></td>
-                                        <td>
-                                            <a href="<?= base_url('buku/delete?id=' . $row->id) ?>">
-                                                <button class="btn btn-danger">Delete</button>
-                                            </a>
-                                            <a href="<?= base_url('buku/editPage?id=' . $row->id) ?>">
-                                                <button class="btn btn-info">Edit</button>
-                                            </a>
-                                        </td>
+                                        <?php if ($level == 'admin') { ?>
+                                            <td>
+                                                <a href="<?= base_url('buku/delete?id=' . $row->id) ?>">
+                                                    <button class="btn btn-danger">Delete</button>
+                                                </a>
+                                                <a href="<?= base_url('buku/editPage?id=' . $row->id) ?>">
+                                                    <button class="btn btn-info">Edit</button>
+                                                </a>
+                                            </td>
+                                        <?php } ?>
                                     </tr>
                                 <?php } ?>
                             </tbody>

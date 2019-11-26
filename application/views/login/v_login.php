@@ -11,7 +11,7 @@
 
 <body style="background-image: url(<?= base_url('assets/css/login/login.jpg') ?>)">
     <div class="box">
-        <?= $this->session->flashdata('noLogin') ?>
+        <?= $this->session->flashdata('failed') ?>
         <?= $this->session->flashdata('log_out') ?>
         <h2>Login</h2>
         <form action="<?= base_url('login') ?>" method="POST">
